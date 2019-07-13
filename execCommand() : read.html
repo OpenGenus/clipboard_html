@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <title>execCommand() method</title>
+    </head>
+    <body>
+
+            <input id="output" type="text">
+            <button id="paste">Paste from clipboard</button>
+            <script>
+                function paste() {
+              var pasteText = document.querySelector("#output");
+              pasteText.focus();
+              document.execCommand("paste");
+              alert(pasteText.value);
+            }
+            
+            document.querySelector("#paste").addEventListener("click", paste);
+            </script>
+            
+
+    </body>
+</html>

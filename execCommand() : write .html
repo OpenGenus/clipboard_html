@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <title>execCommand() method</title>
+    </head>
+    <body>
+
+            <input id="input" type="text"/>
+            <button id="copy">Copy to Clipboard</button>
+            <script>
+                function copy() {
+              var copyText = document.querySelector("#input");
+              copyText.select();
+              document.execCommand("copy");
+              alert(copyText.value + " copied to clipboard.");
+            }
+            
+            document.querySelector("#copy").addEventListener("click", copy);
+            </script>
+            
+
+    </body>
+</html>

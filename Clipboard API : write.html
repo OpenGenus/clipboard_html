@@ -1,0 +1,36 @@
+<html>
+    <head>
+    <title>Clipboard API</title>
+    </head>
+    <body>
+
+            <div>
+                    <input type="text" class="to-copy">
+                    <button class="write-btn">Copy to clipboard</button>
+                  </div>
+                  
+                  <script>
+                  const writeBtn = document.querySelector('.write-btn');
+                  const inputValue = document.querySelector('.to-copy');
+                  writeBtn.addEventListener('click', () => {
+                  
+                    if (inputValue) {
+                      navigator.clipboard.writeText(inputValue)
+                        .then(() => {
+                          const lrt = inputValue.value;
+                          inputValue.value = '';
+                          if (writeBtn.innerText !== 'Copied!') {
+                            const originalText = writeBtn.innerText;
+                            alert(lrt+" Copied"); 
+                          }
+                        })
+                        .catch(err => {
+                          alert("Something went wrong");
+                        })
+                    }
+                  });
+                  </script>                  
+            
+
+    </body>
+</html>
